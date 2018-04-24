@@ -1,12 +1,7 @@
-''' PIL_HideText_decode.py
-get the hidden text back from an encoded image
-'''
+
 from PIL import Image
-def decode_image(img):
-    """
-    check the red portion of an image (r, g, b) tuple for
-    hidden message characters (ASCII values)
-    """
+#------------Function to Decode the image------------#
+def unsteg_image(img):
     width, height = img.size
     msg = ""
     index = 0
@@ -15,7 +10,6 @@ def decode_image(img):
             try:
                 r, g, b = img.getpixel((col, row))
             except ValueError:
-                # need to add transparency a for some .png files
                 r, g, b, a = img.getpixel((col, row))
             # first pixel r value is length of message
             if row == 0 and col == 0:
@@ -24,14 +18,10 @@ def decode_image(img):
                 msg += chr(r)
             index += 1
     return msg
-# downloaded from internet web page
+#------------End of Decode function-------------#
 image_to_be_decoded = "Encoded_test.png"
-# get the hidden text back ...
 img2 = Image.open(image_to_be_decoded)
 print(img2, img2.mode)  # test
-hidden_text = decode_image(img2)
-print("Hidden text:\n{}".format(hidden_text))
-''' my result -->
-Hidden text:
-this is a secret message added to the image
-'''
+secret_message = unsteg_image(img2)
+#printing the Secret message
+print("Secret message:\n{}".format(secret_message))
