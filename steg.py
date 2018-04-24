@@ -18,6 +18,7 @@ def steg_image(img, msg):
     width, height = img.size
     index = 0
     print("Encoding the message...")
+    print("This may take few seconds. Please wait...")
     for row in range(height):
         for col in range(width):
             r, g, b = img.getpixel((col, row))
