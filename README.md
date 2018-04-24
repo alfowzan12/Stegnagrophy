@@ -9,3 +9,4 @@ the unsteg function takes the image as an input and displays the secret message.
 How to Execute : change the string "image_to_be_encoded" to the image you wish to hide the secret message in it and execute steg.py.
 and to display the secret message, change the string "image_to_be_encoded" in unsteg.py to the image with hidden secret message, and execute it.
                 
+**NOTE: You can use the image that is included in this repository without changing any strings in the two python files.**
