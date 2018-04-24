@@ -18,10 +18,12 @@ def unsteg_image(img):
             elif index <= length:
                 msg += chr(r)
             index += 1
-    return msg
+    list = [msg, length]
+    return list
 #------------End of Decode function-------------#
 image_to_be_decoded = "Encoded_test.png"
 img2 = Image.open(image_to_be_decoded)
 secret_message = unsteg_image(img2)
 #printing the Secret message
-print("Secret message:\n{}".format(secret_message))
+print("The length of the text is:", secret_message[1])
+print("Secret message: {}".format(secret_message[0]))
