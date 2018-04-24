@@ -1,5 +1,6 @@
 # Stegnagrophy
 Name : Fares alfowzan
+
 Description : There are two functions, one to steg the image and one to unsteg the image.
 the function to steg the image first checks if the length is less than 255, and then it checks if the image mode is RBG,
   if its not, it throws an error message. and then it uses a copy of the image to hide the secret image in it.
